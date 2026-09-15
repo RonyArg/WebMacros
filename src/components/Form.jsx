@@ -33,7 +33,7 @@ function App() {
                     value={datosUsuario.nombre}
                     onChange={handleChange}
                     required
-                    className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                    className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none"
                 />
             </div>
 
@@ -48,7 +48,7 @@ function App() {
                         value={datosUsuario.edad}
                         onChange={handleChange}
                         required
-                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none"
                     />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -61,7 +61,7 @@ function App() {
                         value={datosUsuario.peso}
                         onChange={handleChange}
                         required
-                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none"
                     />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -74,7 +74,7 @@ function App() {
                         value={datosUsuario.altura}
                         onChange={handleChange}
                         required
-                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                        className="border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none"
                     />
                 </div>
             </div>
@@ -82,7 +82,7 @@ function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex flex-col gap-1">
                     <label className="font-semibold text-gray-700">Género</label>
-                    <select name="genero" value={datosUsuario.genero} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none">
+                    <select name="genero" value={datosUsuario.genero} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu género</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
@@ -90,7 +90,7 @@ function App() {
                 </div>
                 <div className="flex flex-col gap-1">
                     <label className="font-semibold text-gray-700">Estilo de vida</label>
-                    <select name="estiloVida" value={datosUsuario.estiloVida} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none">
+                    <select name="estiloVida" value={datosUsuario.estiloVida} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu estilo de vida</option>
                         <option value="Sedentario">Sedentario</option>
                         <option value="Activo">Activo</option>
@@ -99,7 +99,7 @@ function App() {
                 </div>
                 <div className="flex flex-col gap-1">
                     <label className="font-semibold text-gray-700">Objetivo</label>
-                    <select name="objetivo" value={datosUsuario.objetivo} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-green-400 focus:outline-none">
+                    <select name="objetivo" value={datosUsuario.objetivo} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu objetivo</option>
                         <option value="Perder peso">Perder peso</option>
                         <option value="Mantenimiento">Mantenimiento</option>
@@ -108,7 +108,7 @@ function App() {
                 </div>
 
             </div>
-            <button type="submit" className="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg trasition-colors">
+            <button type="submit" className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 shadow-lg shadow-emerald-600/20 w-full mt-4 py-3  text-white font-bold py-2 px-4 rounded-xl transition-colors transition-duration-200">
                 Calcular Macronutrientes
             </button>
 
