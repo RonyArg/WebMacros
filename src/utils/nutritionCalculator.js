@@ -1,6 +1,9 @@
+/**
+ * Calcula las calorías necesarias según el peso, altura, edad y objetivos.
+ * formula: Miffflin-St Jeor
+ */ 
 export const calcularCalorias = (pesoInput, alturaInput, edadInput, genero, estilo, objetivo) => {
     
-    // Se convierten las entradas a números y se validan
     const peso = Number(pesoInput);
     const altura = Number(alturaInput);
     const edad = Number(edadInput);
@@ -70,3 +73,55 @@ export const calcularCalorias = (pesoInput, alturaInput, edadInput, genero, esti
         alertaMicronutrientes
     };
 }
+
+/**
+ * Calcula los macronutrientes necesarios según las calorías totales, peso y objetivos
+ * Se establecen límites para asegurar una dieta equilibrada y evitar déficits en proteínas y grasas esenciales.
+ * */
+export const calcularMacronutrientes = (caloriasTotales, pesoInput, objetivo) => {
+    const peso = Number(pesoInput);
+    
+    if (peso <= 0 || isNaN(peso) || caloriasTotales <= 0) {
+        throw new Error("Datos inválidos para calcular macronutrientes.");
+    }
+
+    const objNormalizado = objetivo.trim().toLowerCase();
+
+    // CÁLCULO DE PROTEÍNAS. 2.2g/kg para proteger músculo en déficit. 2.0g/kg para volumen/mantenimiento.
+    const multiplicadorProteina = objNormalizado.includes("perder") ? 2.2 : 2.0;
+    let proteinasGramos = peso * multiplicadorProteina;
+    let proteinasKcal = proteinasGramos * 4;
+
+    // La proteína nunca debe superar el 40% de las calorías totales para no saturar la dieta y permitir la entrada de otros nutrientes.
+    const maxProteinasKcal = caloriasTotales * 0.40;
+    if (proteinasKcal > maxProteinasKcal) {
+        proteinasKcal = maxProteinasKcal;
+        proteinasGramos = proteinasKcal / 4;
+    }
+
+    // CÁLCULO DE GRASAS (25% del total calórico)
+    let grasasKcal = caloriasTotales * 0.25;
+    let grasasGramos = grasasKcal / 9;
+
+    // La grasa nunca debe bajar de 30g de grasa diarios.
+    if (grasasGramos < 30) {
+        grasasGramos = 30;
+        grasasKcal = grasasGramos * 9;
+    }
+
+    // CÁLCULO DE CARBOHIDRATOS (El resto de energía disponible)
+    let carbohidratosKcal = caloriasTotales - (proteinasKcal + grasasKcal);
+    
+    // Evita negativos en casos de manipulaciones de datos
+    if (carbohidratosKcal < 0) {
+        carbohidratosKcal = 0;
+    }
+    const carbohidratosGramos = carbohidratosKcal / 4;
+
+    return {
+        calorias: Math.round(caloriasTotales),
+        proteinas: Math.round(proteinasGramos),
+        grasas: Math.round(grasasGramos),
+        carbohidratos: Math.round(carbohidratosGramos)
+    };
+};
