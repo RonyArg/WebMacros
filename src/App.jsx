@@ -1,11 +1,35 @@
 import Form from './components/Form';
 import Results from './components/Results';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { calcularCalorias, calcularMacronutrientes } from './utils/nutritionCalculator';
+
+const RESULTS_STORAGE_KEY = 'macros_results_data';
 
 function App() {
   // Estado para guardar los resultados del cálculo de calorías y macronutrientes
-  const [resultados, setResultados] = useState(null);
+  const [resultados, setResultados] = useState(() => {
+    try {
+      const resultadosGuardados = localStorage.getItem(RESULTS_STORAGE_KEY);
+      if (resultadosGuardados) {
+        return JSON.parse(resultadosGuardados);
+      }
+    } catch (error) {
+      console.error("Error al recuperar datos del almacenamiento local:", error);
+    }
+    return null;
+  });
+
+  useEffect(() => {
+    try {
+      if (resultados) {
+        localStorage.setItem(RESULTS_STORAGE_KEY, JSON.stringify(resultados));
+      } else {
+        localStorage.removeItem(RESULTS_STORAGE_KEY);
+      }
+    } catch (error) {
+      console.error("Error al guardar datos en el almacenamiento local:", error);
+    }
+  }, [resultados]);
 
   const handleCalculate = (datosUsuario) => {
     try {
