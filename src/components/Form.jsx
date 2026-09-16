@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function App() {
+function Form() {
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: '',
         edad: '',
@@ -26,8 +26,9 @@ function App() {
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
             <div className="flex flex-col gap-1">
-                <label className="font-semibold text-gray-700">Nombre</label>
+                <label htmlFor="nombre" className="font-semibold text-gray-700">Nombre</label>
                 <input
+                    id="nombre"
                     type="text"
                     name="nombre"
                     value={datosUsuario.nombre}
@@ -39,8 +40,9 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Edad (años)</label>
+                    <label htmlFor="edad" className="font-semibold text-gray-700">Edad (años)</label>
                     <input
+                        id="edad"
                         type="number"
                         name="edad"
                         min="1"
@@ -52,8 +54,9 @@ function App() {
                     />
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Peso (kg)</label>
+                    <label htmlFor="peso" className="font-semibold text-gray-700">Peso (kg)</label>
                     <input
+                        id="peso"
                         type="number"
                         name="peso"
                         min="1"
@@ -65,8 +68,9 @@ function App() {
                     />
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Altura (cm)</label>
+                    <label htmlFor="altura" className="font-semibold text-gray-700">Altura (cm)</label>
                     <input
+                        id="altura"
                         type="number"
                         name="altura"
                         min="1"
@@ -81,16 +85,16 @@ function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Género</label>
-                    <select name="genero" value={datosUsuario.genero} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
+                    <label htmlFor="genero" className="font-semibold text-gray-700">Género</label>
+                    <select id="genero" name="genero" value={datosUsuario.genero} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu género</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Estilo de vida</label>
-                    <select name="estiloVida" value={datosUsuario.estiloVida} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
+                    <label htmlFor="estiloVida" className="font-semibold text-gray-700">Estilo de vida</label>
+                    <select id="estiloVida" name="estiloVida" value={datosUsuario.estiloVida} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu estilo de vida</option>
                         <option value="Sedentario">Sedentario</option>
                         <option value="Activo">Activo</option>
@@ -98,8 +102,8 @@ function App() {
                     </select>
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label className="font-semibold text-gray-700">Objetivo</label>
-                    <select name="objetivo" value={datosUsuario.objetivo} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
+                    <label htmlFor="objetivo" className="font-semibold text-gray-700">Objetivo</label>
+                    <select id="objetivo" name="objetivo" value={datosUsuario.objetivo} onChange={handleChange} required className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-emerald-400 focus:outline-none">
                         <option value="" disabled>Selecciona tu objetivo</option>
                         <option value="Perder peso">Perder peso</option>
                         <option value="Mantenimiento">Mantenimiento</option>
@@ -115,4 +119,4 @@ function App() {
         </form>
     )
 }
-export default App
+export default Form
