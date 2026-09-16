@@ -17,6 +17,7 @@ function App() {
       resultadoCalorias.calorias, datosUsuario.peso, datosUsuario.objetivo
     );
     setResultados({
+      nombre: datosUsuario.nombre,
       calorias: resultadoCalorias.calorias,
       proteinas: resultadoMacronutrientes.proteinas,
       grasas: resultadoMacronutrientes.grasas,
@@ -53,7 +54,7 @@ function App() {
               {resultados ? "Tus resultados nutricionales" : "Calcula tus macronutrientes"}
             </h2>
             <p className="text-gray-600">
-              {resultados ? "Están basados en tus datos personales" : "Descubre cuántas calorías, proteínas, carbohidratos y grasas necesitas realmente para alcanzar tus objetivos."}
+              {resultados ? "Plan nutricional para " + resultados.nombre : "Descubre cuántas calorías, proteínas, carbohidratos y grasas necesitas realmente para alcanzar tus objetivos."}
             </p>
           </div>
 

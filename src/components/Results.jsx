@@ -28,7 +28,7 @@ function Results ({resultados}) {
                 </div>
 
                 {/* CARBOHIDRATOS */}
-                <div className="col-span-2 md:col-span-1 bg-purple-50 p-4 rounded-xl border border-purple-100 md:col-start-1 md:col-end-3 md:w-1/2 md:mx-auto">
+                <div className=" col-span-2 bg-purple-50 p-4 rounded-xl border border-purple-100">
                     <p className="text-sm font-semibold text-purple-800 uppercase tracking-wide">Carbohidratos</p>
                     <p className="text-2xl font-bold text-purple-600">{resultados.carbohidratos}g</p>
                 </div>
@@ -40,7 +40,7 @@ function Results ({resultados}) {
                     <p>
                         <strong className="font-bold">Aviso de seguridad médica:</strong> 
                         {" "}El cálculo se ha ajustado al límite calórico de seguridad para evitar problemas de salud. 
-                        Para perder peso de forma saludable, te recomendamos aumentar tu actividad física diaria.
+                        Para perder peso de forma saludable, te recomendamos no consumir menos calorías sin supervisión médica.
                     </p>
                 </div>
             )}

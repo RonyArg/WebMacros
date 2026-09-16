@@ -55,11 +55,11 @@ export const calcularCalorias = (pesoInput, alturaInput, edadInput, genero, esti
 
     // Límite de seguridad y Advertencia
     const limiteSeguro = esHombre ? 1500 : 1200;
-    let alertaMicronutrientes = false; // Alerta para déficit de micronutrientes
+    let alertaLimiteCalorico = false; // Alerta para déficit de micronutrientes
     
     if (caloriasFinales <= limiteSeguro) {
         caloriasFinales = limiteSeguro;
-        alertaMicronutrientes = true; 
+        alertaLimiteCalorico = true; 
         
         console.warn(
             `Riesgo de déficit de micronutrientes. ` +
@@ -70,7 +70,7 @@ export const calcularCalorias = (pesoInput, alturaInput, edadInput, genero, esti
 
     return {
         calorias: Math.round(caloriasFinales),
-        alertaMicronutrientes
+        alertaMicronutrientes: alertaLimiteCalorico
     };
 }
 

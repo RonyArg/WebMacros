@@ -1,7 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const STORAGE_KEY = 'macros_user_data';
 
 function Form({onSubmitData}) {
-    const [datosUsuario, setDatosUsuario] = useState({
+
+    // Estado para manejar los datos del usuario
+    const [datosUsuario, setDatosUsuario] = useState(() => {
+        try {
+            const datosGuardados = localStorage.getItem(STORAGE_KEY);
+            if (datosGuardados) {
+                return JSON.parse(datosGuardados);
+            }
+        } catch (error) {
+            console.error("Error al recuperar datos del almacenamiento local:", error);
+        }
+        
+        
+
+        return {
         nombre: '',
         edad: '',
         peso: '',
@@ -9,7 +25,16 @@ function Form({onSubmitData}) {
         genero: '',
         estiloVida: '',
         objetivo: '',
+        };
     });
+
+    useEffect(() => {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(datosUsuario));
+            } catch (error) {
+                console.error("Error al guardar datos en el almacenamiento local:", error);
+            }
+        }, [datosUsuario]); // Solo se ejecuta cuando 'datosUsuario' cambia
 
     const handleChange = (e) => {
         const { name, value } = e.target;
