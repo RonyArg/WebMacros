@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Form() {
+function Form({onSubmitData}) {
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: '',
         edad: '',
@@ -21,6 +21,7 @@ function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        onSubmitData(datosUsuario);
     }
 
     return (

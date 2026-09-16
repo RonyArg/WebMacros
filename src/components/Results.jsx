@@ -3,17 +3,15 @@ function Results ({resultados}) {
     if (!resultados) return null;
 
     return (
-        <div className="mt-6 p-6 bg-white border border-gray-100 rounded-2xl shadow-xl">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                Tus datos nutriocionales
-            </h2>          
+        <div className=" p-6 bg-white">
+                  
 
             <div className="grid grid-cols-2 gap-4 text-center">
                 {/* CALORÍAS (Destacado) */}
                 <div className="col-span-2 bg-emerald-50 p-4 rounded-xl border border-emerald-100">
                     <p className="text-sm font-semibold text-emerald-800 uppercase tracking-wide">Calorías Diarias</p>
                     <p className="text-4xl font-black text-emerald-600">
-                        {resultados.calorias} <span className="text-lg font-normal text-emerald-700">calorías</span>
+                        {resultados.calorias} <span className="text-lg font-normal text-emerald-700">kcal</span>
                     </p>
                 </div>
 
