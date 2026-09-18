@@ -1,9 +1,10 @@
 # WebMacros <img src="./public/apple.png" alt="Logo" height="30" style="vertical-align: -4;">
 
-![React](https://img.shields.io/badge/React-19.3.0-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-8.3.0-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vitest](https://img.shields.io/badge/Vitest-5-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
 Aplicación web para estimar las calorías diarias y distribuir los macronutrientes en función de los datos personales, el estilo de vida y el objetivo del usuario.
 
@@ -12,10 +13,10 @@ Aplicación web para estimar las calorías diarias y distribuir los macronutrien
 
 ## 💻 Vista previa
 
-### Versión Escritorio
+### Versión escritorio
 ![Vista previa Escritorio](./public/macros_escritorio.gif)
 
-### Versión movil
+### Versión móvil
 ![Vista previa Movil](./public/macros_movil.gif)
 
 
@@ -77,7 +78,7 @@ WebMacros **no utiliza una base de datos externa** ni envía los datos personale
 
 ### Aplicación
 
-- [React](https://react.dev/) `19.3.0`
+- [React](https://react.dev/) `19`
 - JavaScript
 - HTML5
 - CSS3
@@ -91,6 +92,7 @@ WebMacros **no utiliza una base de datos externa** ni envía los datos personale
 - Integración de Tailwind CSS para Vite `4.3.3`
 - [ESLint](https://eslint.org/) `10.10.0`
 - [pnpm](https://pnpm.io/) como gestor de paquetes
+- [Vitest](https://vitest.dev/) para tests unitarios
 
 ## 📈 Estado del proyecto
 
@@ -107,10 +109,40 @@ La funcionalidad principal ya está implementada y disponible para su uso, inclu
 - Recuperación de los resultados en futuras visitas.
 - Actualización de los datos y recálculo de los resultados.
 
+## 🧪 Tests y validación
+
+La lógica principal de cálculo está cubierta mediante tests unitarios ubicados en:
+
+```text
+src/utils/nutritionCalculator.test.js
+```
+
+Para ejecutar los tests en modo watch durante el desarrollo:
+
+```bash
+pnpm test
+```
+
+Para ejecutar una sola vez:
+
+```bash
+pnpm test:run
+```
+
+Antes de publicar cambios, se puede validar el proyecto ejecutando:
+
+```bash
+pnpm lint
+pnpm test:run
+pnpm build
+```
+
 ## 🛤️ Próximos pasos
 
 Las futuras mejoras previstas para el proyecto incluyen:
 
+- ~~Añadir test unitarios para validar el cálculo de calorías y la distribución de macronutrientes.~~
+- Publicar una demo online del proyecto.
 - Crear una **sección informativa o blog** con recomendaciones para llevar una vida saludable.
 - Basar el contenido del blog en **estudios y fuentes fiables**.
 - Añadir un **apartado explicativo** sobre la fórmula matemática utilizada.
@@ -188,6 +220,8 @@ http://localhost:5173
 | `pnpm build` | Genera la versión optimizada para producción en `dist/`. |
 | `pnpm preview` | Previsualiza localmente la versión de producción. |
 | `pnpm lint` | Analiza el código en busca de errores y problemas de estilo. |
+| `pnpm test` | Ejecuta los test en modo watch. |
+| `pnpm test:run` | Ejecuta los test una sola vez. | 
 
 ## 👤 Autor
 
