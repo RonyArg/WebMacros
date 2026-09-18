@@ -1,5 +1,7 @@
 # WebMacros <img src="./public/apple.png" alt="Logo" height="30" style="vertical-align: -4;">
 
+[![Demo online](https://img.shields.io/badge/Demo-online-success?style=for-the-badge)](https://webmacros.vercel.app/)
+
 ![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-8.3.0-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -8,8 +10,11 @@
 
 Aplicación web para estimar las calorías diarias y distribuir los macronutrientes en función de los datos personales, el estilo de vida y el objetivo del usuario.
 
+## 🌐 Demo online
 
+Puedes probar WebMacros directamente desde el siguiente enlace:
 
+👉 [**Abrir la demo online**](https://webmacros.vercel.app/)
 
 ## 💻 Vista previa
 
